@@ -1,8 +1,8 @@
 Summary:	abcMIDI is a package of programs developed by James Allwright for processing ABC music notation files
 Name:		abcmidi
-Version:	2011.11.18
+Version:	2011.12.11
 Release:	1
-Source0:	abcMIDI-2011-11-18.zip
+Source0:	http://ifdo.pugmarks.com/~seymour/runabc/abcMIDI-2011-12-11.zip
 Group:		Sound
 License:	GPL
 URL:		http://ifdo.pugmarks.com/~seymour/runabc/top.html
