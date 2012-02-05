@@ -2,10 +2,10 @@ Summary:	abcMIDI is a package of programs developed by James Allwright for proce
 Name:		abcmidi
 Version:	2012.02.01
 Release:	1
-Source0:	http://ifdo.pugmarks.com/~seymour/runabc/abcMIDI-2011-12-11.zip
+Source0:	http://ifdo.pugmarks.com/~seymour/runabc/abcMIDI-2012-02-01.zip
 Group:		Sound
 License:	GPL
-URL:		http://ifdo.pugmarks.com/~seymour/runabc/top.html
+URL:		http://ifdo.ca/welcome_e.asp
 
 %description
 The abcMIDI package contains four programs: abc2midi to convert ABC music
