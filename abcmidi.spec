@@ -1,11 +1,13 @@
-Summary:	abcMIDI is a package of programs developed by James Allwright for processing ABC music notation files
+Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2012.02.01
+Version:	2012.04.15
 Release:	1
-Source0:	http://ifdo.pugmarks.com/~seymour/runabc/abcMIDI-2012-02-01.zip
+Source0:	http://ifdo.pugmarks.com/~seymour/runabc/abcMIDI-2012-04-15.zip
 Group:		Sound
 License:	GPL
 URL:		http://ifdo.ca/welcome_e.asp
+Patch0:		abcmidi-2011.10.19-install.patch
+
 
 %description
 The abcMIDI package contains four programs: abc2midi to convert ABC music
@@ -18,29 +20,18 @@ which is a part of the abc2mtex package written by Chris Walshaw.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
+
 
 %build
+rm configure makefile || die
+sed -i -e "s:-O2::" configure.ac || die
+autoreconf -fi
+%configure2_5x
 %make
 
 %install
-mkdir -p %{buildroot}%{_bindir}
-install -m 755 abc2midi %{buildroot}%{_bindir}
-install -m 755 abcmatch %{buildroot}%{_bindir}
-install -m 755 midi2abc %{buildroot}%{_bindir}
-install -m 755 midicopy %{buildroot}%{_bindir}
-install -m 755 abc2abc %{buildroot}%{_bindir}
-install -m 755 mftext %{buildroot}%{_bindir}
-install -m 755 yaps %{buildroot}%{_bindir}
-
-mkdir -p %{buildroot}%{_mandir}/man1
-install -m 644 doc/abc2abc.1 %{buildroot}%{_mandir}/man1
-install -m 644 doc/abc2midi.1 %{buildroot}%{_mandir}/man1
-install -m 644 doc/mftext.1 %{buildroot}%{_mandir}/man1
-install -m 644 doc/midi2abc.1 %{buildroot}%{_mandir}/man1
-install -m 644 doc/midicopy.1 %{buildroot}%{_mandir}/man1
-install -m 644 doc/yaps.1 %{buildroot}%{_mandir}/man1
-
-chmod 644 doc/*
+%makeinstall_std
 
 %files
 %doc doc/CHANGES VERSION
