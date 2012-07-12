@@ -1,8 +1,8 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2012.04.15
+Version:	2012.07.04
 Release:	1
-Source0:	http://ifdo.pugmarks.com/~seymour/runabc/abcMIDI-2012-04-15.zip
+Source0:	http://ifdo.pugmarks.com/~seymour/runabc/abcMIDI-2012-07-04.zip
 Group:		Sound
 License:	GPL
 URL:		http://ifdo.ca/welcome_e.asp
