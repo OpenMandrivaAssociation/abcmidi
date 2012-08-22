@@ -12,10 +12,10 @@ Patch0:		abcmidi-2011.10.19-install.patch
 %description
 The abcMIDI package contains four programs: abc2midi to convert ABC music
 notation to midi, midi2abc to convert midi files to (a first approximation
-to) the corresponding ABC, abc2abc to reformat and/or transpose ABC files,
+of) the corresponding ABC, abc2abc to reformat and/or transpose ABC files,
 and yaps to typeset ABC files as PostScript.
 
-For a description of the abc syntax, please see the abc userguide 
+For a description of the ABC syntax, please see the ABC user guide 
 which is a part of the abc2mtex package written by Chris Walshaw.
 
 %prep
