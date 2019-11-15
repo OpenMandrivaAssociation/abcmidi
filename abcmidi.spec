@@ -6,8 +6,6 @@ Source0:	https://sourceforge.net/projects/abc/files/abcmidi/abcmidi/abcMIDI-%{ve
 Group:		Sound
 License:	GPL
 URL:		http://ifdo.ca/welcome_e.asp
-#Patch0:		abcmidi-2011.10.19-install.patch
-
 
 %description
 The abcMIDI package contains four programs: abc2midi to convert ABC music
@@ -20,22 +18,18 @@ which is a part of the abc2mtex package written by Chris Walshaw.
 
 %prep
 %setup -q -n %{name}
-#patch0 -p1
-
 
 %build
-rm configure makefile || die
+rm -f configure makefile || die
 sed -i -e "s:-O2::" configure.ac || die
 autoreconf -fi
-%configure
-%make
+%configure2_5x
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files
-%doc doc/CHANGES VERSION
-%doc %{_mandir}/man1/*
+%doc %{_defaultdocdir}/*
+%{_mandir}/man1/*.xz
 %{_bindir}/*
-
-
