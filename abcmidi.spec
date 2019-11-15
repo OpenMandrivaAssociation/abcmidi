@@ -1,12 +1,12 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2012.07.04
-Release:	2
+Version:	2019.07.12
+Release:	1
 Source0:	http://ifdo.pugmarks.com/~seymour/runabc/abcMIDI-2012-07-04.zip
 Group:		Sound
 License:	GPL
 URL:		http://ifdo.ca/welcome_e.asp
-Patch0:		abcmidi-2011.10.19-install.patch
+#Patch0:		abcmidi-2011.10.19-install.patch
 
 
 %description
@@ -20,7 +20,7 @@ which is a part of the abc2mtex package written by Chris Walshaw.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
+#patch0 -p1
 
 
 %build
