@@ -1,8 +1,8 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2019.07.12
+Version:	2020.01.06
 Release:	1
-Source0:	https://sourceforge.net/projects/abc/files/abcmidi/abcmidi/abcMIDI-%{version}.zip
+Source0:	https://ifdo.ca/~seymour/runabc/abcMIDI-%{version}.zip
 Group:		Sound
 License:	GPL
 URL:		http://ifdo.ca/welcome_e.asp
@@ -23,7 +23,7 @@ which is a part of the abc2mtex package written by Chris Walshaw.
 rm -f configure makefile || die
 sed -i -e "s:-O2::" configure.ac || die
 autoreconf -fi
-%configure2_5x
+%configure
 %make_build
 
 %install
@@ -31,5 +31,5 @@ autoreconf -fi
 
 %files
 %doc %{_defaultdocdir}/*
-%{_mandir}/man1/*.xz
+%{_mandir}/man1/*.1*
 %{_bindir}/*
