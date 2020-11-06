@@ -1,8 +1,9 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2020.01.06
+Version:	2020.11.01
 Release:	1
 Source0:	https://ifdo.ca/~seymour/runabc/abcMIDI-%{version}.zip
+Patch0: 	abcmidi-compile.patch
 Group:		Sound
 License:	GPL
 URL:		http://ifdo.ca/welcome_e.asp
@@ -17,13 +18,13 @@ For a description of the abc syntax, please see the abc userguide
 which is a part of the abc2mtex package written by Chris Walshaw.
 
 %prep
-%setup -q -n %{name}
-
-%build
+%autosetup -p1 -n %{name}
 rm -f configure makefile || die
 sed -i -e "s:-O2::" configure.ac || die
 autoreconf -fi
 %configure
+
+%build
 %make_build
 
 %install

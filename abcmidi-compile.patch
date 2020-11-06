@@ -1,0 +1,16 @@
+diff -up abcmidi/drawtune.c.omv~ abcmidi/drawtune.c
+--- abcmidi/drawtune.c.omv~	2020-11-06 21:57:42.617584760 +0100
++++ abcmidi/drawtune.c	2020-11-06 21:59:24.310116644 +0100
+@@ -3005,10 +3005,10 @@ static int printvoiceline(struct voice*
+       newpage();
+     };
+     if (v->place->type == LEFT_TEXT) {
+-      printtext(left, v->place->item, &textfont);
++      printtext(left, v->place->item.voidptr, &textfont);
+     };
+     if (v->place->type == CENTRE_TEXT) {
+-      printtext(centre, v->place->item, &textfont);
++      printtext(centre, v->place->item.voidptr, &textfont);
+     };
+     if (v->place->type == VSKIP) {
+       vskip((double)v->place->item.number);
