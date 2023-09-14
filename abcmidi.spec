@@ -1,11 +1,11 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2023.08.22
+Version:	2023.09.13
 Release:	1
 Source0:	https://ifdo.ca/~seymour/runabc/abcMIDI-%{version}.zip
 Group:		Sound
 License:	GPL
-URL:		http://ifdo.ca/welcome_e.asp
+URL:		https://ifdo.ca/~seymour/runabc/top.html
 
 %description
 The abcMIDI package contains four programs: abc2midi to convert ABC music
