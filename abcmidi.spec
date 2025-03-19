@@ -1,6 +1,6 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2024.12.16
+Version:	2025.02.16
 Release:	1
 Source0:	https://ifdo.ca/~seymour/runabc/abcMIDI-%{version}.zip
 Group:		Sound
