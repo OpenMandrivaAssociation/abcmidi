@@ -10,6 +10,11 @@ Source0:	https://github.com/sshlien/abcmidi/archive/refs/tags/%{name}-%{version}
 # Avoid automatic install of docs: we take them with our %%doc macro
 Patch0:	abcmidi-2025.06.27-dont-install-docs.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 The abcMIDI package contains four programs: abc2midi to convert ABC music
 notation to midi, midi2abc to convert midi files to (a first approximation
