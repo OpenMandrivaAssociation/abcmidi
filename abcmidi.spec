@@ -1,6 +1,6 @@
 Summary:	Tool for processing ABC music notation files
 Name:	abcmidi
-Version:	2025.06.27
+Version:	2025.11.26
 Release:	1
 License:	GPLv2+
 Group:	Sound
@@ -9,17 +9,19 @@ Url:		https://ifdo.ca/~seymour/runabc/top.html
 Source0:	https://github.com/sshlien/abcmidi/archive/refs/tags/%{name}-%{version}.tar.gz
 # Avoid automatic install of docs: we take them with our %%doc macro
 Patch0:	abcmidi-2025.06.27-dont-install-docs.patch
-
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
+
 %description
-The abcMIDI package contains four programs: abc2midi to convert ABC music
-notation to midi, midi2abc to convert midi files to (a first approximation
-to) the corresponding ABC, abc2abc to reformat and/or transpose ABC files,
-and yaps to typeset ABC files as PostScript.
+The abcMIDI package contains four programs:
+* abc2midi to convert ABC music notation to midi,
+* midi2abc to convert midi files to (a first approximation to) the
+   corresponding ABC,
+* abc2abc to reformat and/or transpose ABC files,
+* yaps to typeset ABC files as PostScript.
 
 %files
 %doc README.md doc/AUTHORS doc/CHANGES doc/abcguide.txt doc/history.txt doc/readme.txt
