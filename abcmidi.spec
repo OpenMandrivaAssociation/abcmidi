@@ -1,19 +1,18 @@
 Summary:	Tool for processing ABC music notation files
-Name:	abcmidi
+Name:		abcmidi
 Version:	2025.11.26
 Release:	1
 License:	GPLv2+
-Group:	Sound
+Group:		Sound
 Url:		https://ifdo.ca/~seymour/runabc/top.html
 # See also: https://sourceforge.net/projects/abcmidi/files/abcMIDI-%%{version}.zip
-Source0:	https://github.com/sshlien/abcmidi/archive/refs/tags/%{name}-%{version}.tar.gz
+Source0:	https://github.com/sshlien/abcmidi/archive/refs/tags/%{version}.tar.gz
 # Avoid automatic install of docs: we take them with our %%doc macro
-Patch0:	abcmidi-2025.06.27-dont-install-docs.patch
+Patch0:		abcmidi-2025.06.27-dont-install-docs.patch
+BuildSystem:	autotools
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool-base
 BuildRequires:	slibtool
-BuildRequires:	make
 
 %description
 The abcMIDI package contains four programs:
@@ -23,25 +22,13 @@ The abcMIDI package contains four programs:
 * abc2abc to reformat and/or transpose ABC files,
 * yaps to typeset ABC files as PostScript.
 
+%prep -a
+rm -f configure makefile || die
+sed -i -e "s:-O2::" configure.ac || die
+autoreconf -vfi
+sed -i -e 's|doc/\*|../doc/*|g' Makefile.in
+
 %files
 %doc README.md doc/AUTHORS doc/CHANGES doc/abcguide.txt doc/history.txt doc/readme.txt
 %{_bindir}/*
 %{_mandir}/man1/*.1*
-
-#-----------------------------------------------------------------------------
-
-%prep
-%autosetup -p1
-
-
-%build
-rm -f configure makefile || die
-sed -i -e "s:-O2::" configure.ac || die
-autoreconf -vfi
-%configure
-
-%make_build
-
-
-%install
-%make_install
