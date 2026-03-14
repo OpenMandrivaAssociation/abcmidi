@@ -1,12 +1,12 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2025.11.26
+Version:	2026.02.24
 Release:	1
 License:	GPLv2+
 Group:		Sound
 Url:		https://ifdo.ca/~seymour/runabc/top.html
 # See also: https://sourceforge.net/projects/abcmidi/files/abcMIDI-%%{version}.zip
-Source0:	https://github.com/sshlien/abcmidi/archive/refs/tags/%{version}.tar.gz
+Source0:	https://github.com/sshlien/abcmidi/archive/refs/tags/%{name}-%{version}.tar.gz
 # Avoid automatic install of docs: we take them with our %%doc macro
 Patch0:		abcmidi-2025.06.27-dont-install-docs.patch
 BuildSystem:	autotools
