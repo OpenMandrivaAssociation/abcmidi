@@ -1,6 +1,6 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2026.02.24
+Version:	2026.04.26
 Release:	1
 License:	GPLv2+
 Group:		Sound
