@@ -1,6 +1,6 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2026.04.26
+Version:	2026.06.16
 Release:	1
 License:	GPLv2+
 Group:		Sound
@@ -16,10 +16,10 @@ BuildRequires:	slibtool
 
 %description
 The abcMIDI package contains four programs:
-* abc2midi to convert ABC music notation to midi,
+* abc2midi to convert ABC music notation to midi;
 * midi2abc to convert midi files to (a first approximation to) the
-   corresponding ABC,
-* abc2abc to reformat and/or transpose ABC files,
+   corresponding ABC;
+* abc2abc to reformat and/or transpose ABC files;
 * yaps to typeset ABC files as PostScript.
 
 %prep -a
