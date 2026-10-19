@@ -1,12 +1,12 @@
 Summary:	Tool for processing ABC music notation files
 Name:		abcmidi
-Version:	2026.06.16
+Version:	2026.10.09
 Release:	1
 License:	GPLv2+
 Group:		Sound
 Url:		https://ifdo.ca/~seymour/runabc/top.html
 # See also: https://sourceforge.net/projects/abcmidi/files/abcMIDI-%%{version}.zip
-Source0:	https://github.com/sshlien/abcmidi/archive/refs/tags/%{name}-%{version}.tar.gz
+Source0:	https://github.com/sshlien/abcmidi/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 # Avoid automatic install of docs: we take them with our %%doc macro
 Patch0:		abcmidi-2025.06.27-dont-install-docs.patch
 BuildSystem:	autotools
@@ -24,7 +24,9 @@ The abcMIDI package contains four programs:
 
 %prep -a
 rm -f configure makefile || die
-sed -i -e "s:-O2::" configure.ac || die
+# Upstream's non-debug path appends -O2. Keep rpm optflags and pin
+# gnu89: the sources still use K&R empty parameter lists, which C23 rejects.
+sed -i -e 's/-O2/-std=gnu89/' configure.ac || die
 autoreconf -vfi
 sed -i -e 's|doc/\*|../doc/*|g' Makefile.in
 

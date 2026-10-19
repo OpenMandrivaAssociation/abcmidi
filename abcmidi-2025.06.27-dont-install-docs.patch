@@ -1,13 +1,13 @@
-diff -rupN abcmidi-2025.06.27.old/Makefile.in abcmidi-2025.06.27/Makefile.in
---- abcmidi-2025.06.27.old/Makefile.in	2025-06-17 15:04:37.000000000 +0200
-+++ abcmidi-2025.06.27/Makefile.in	2025-07-25 14:33:34.391606482 +0200
-@@ -152,13 +152,6 @@ install: abc2midi midi2abc abc2abc mftex
+--- abcmidi-2026.10.09.old/Makefile.in	2026-10-09 17:16:59.000000000 +0200
++++ abcmidi-2026.10.09/Makefile.in	2026-10-19 05:53:39.092316785 +0200
+@@ -152,14 +152,6 @@ install: abc2midi midi2abc abc2abc mftex
  	$(INSTALL) -d $(DESTDIR)$(bindir)
  	$(INSTALL) -m 755 ${binaries} $(DESTDIR)$(bindir)
  
 -	# install documentation
 -	$(INSTALL) -d $(DESTDIR)${docdir}
 -	$(INSTALL)  -m 644 doc/*.txt $(DESTDIR)$(docdir)
+-	$(INSTALL)  -m 644 doc/*.md $(DESTDIR)$(docdir)
 -	$(INSTALL)  -m 644 doc/AUTHORS $(DESTDIR)$(docdir)
 -	$(INSTALL)  -m 644 doc/CHANGES $(DESTDIR)$(docdir)
 -	$(INSTALL)  -m 644 VERSION $(DESTDIR)$(docdir)
